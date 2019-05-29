@@ -5,33 +5,41 @@
 </head>
 
 <html>
-    <script>
-        function pulaLinha() {
-		document.write("<br>");
-        }
+	<script>
+		function pulaLinha() {
+			document.write("<br>");
+		}
 	    
-        function mostra(textoMostra) {
-		document.write(textoMostra);
-		pulaLinha();
-        }
+		function mostra(textoMostra) {
+			document.write(textoMostra);
+			pulaLinha();
+		}
 	    
-        function calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos) {
-		return (kilometragemAtual - kilometragemInicial) / litrosConsumidos;
-	}
+		function calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos) {
+			return (kilometragemAtual - kilometragemInicial) / litrosConsumidos;
+		}
 
-	var kilometragemInicial = parseInt(prompt("Coloque sua kilometragem inicial aqui:"));
-	var kilometragemAtual = parseInt(prompt("Coloque sua kilometragem atual aqui:"));
-	var litrosConsumidos = parseInt(prompt("Coloque seu consumo de combustível em Litros aqui:"));
-	var consumo = calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos);
-	
-	if (diferenca >= 70) {
-		mostra("Está compensando abastecer GASOLINA!");
-	}
+		var gasolina = Number(prompt("Coloque aqui o valor da gasolina na bomba:"));
+		var alcool = Number(prompt("Coloque aqui o valor do alcool na bomba:"));
+		var diferenca = (alcool / gasolina) * 100;
 
-	if (diferenca < 70) {
-		mostra("Está compensando abastecer ALCOOL!");
-	}
+		var kilometragemInicial = parseInt(prompt("Coloque sua kilometragem inicial aqui:"));
+		var kilometragemAtual = parseInt(prompt("Coloque sua kilometragem atual aqui:"));
+		var litrosConsumidos = parseInt(prompt("Coloque seu consumo de combustível em Litros aqui:"));
+		
+		var kilometragemDiferenca = kilometragemAtual - kilometragemInicial;
+		var consumo = calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos);
+		var proximoAbastecimento = kilometragemAtual + kilometragemDiferenca
 
-	mostra("O seu carro anda : " + consumo + " km por cada Litro de combustível colocado!");
-    </script>
-</html> 
+		if (diferenca >= 70) {
+			mostra("Está compensando abastecer GASOLINA!");
+		}
+
+		if (diferenca < 70) {
+			mostra("Está compensando abastecer ALCOOL!");
+		}
+
+		mostra("O seu carro anda " + consumo + " km por cada Litro de combustível colocado!");
+		mostra("Seu próximo abastecimento, provavelmente, será quando o marcador chegar a " + proximoAbastecimento + " km!")
+	</script>
+</html>
