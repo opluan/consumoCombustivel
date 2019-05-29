@@ -9,12 +9,16 @@
             document.write(textoMostra);
             pulaLinha();
         }
-        function calculaCombustivel(distanciaInicial, distanciaFinal, gastoReais) {
-            
-            var consumo = (distanciaFinal - distanciaInicial) / gastoReais;
-            
-            mostra("O gasto de combustível foi de : " + consumo + " km/L");
-        }
-        calculaCombustivel(window.prompt("Coloque sua kilometragem inicial aqui:"), window.prompt("Coloque sua kilometragem atual aqui:"), window.prompt("Coloque aqui quantos litros foram abastecido:"))
+        function calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos) {
+			
+			return (kilometragemAtual - kilometragemInicial) / litrosConsumidos;
+			}
+
+		var kilometragemInicial = prompt("Coloque sua kilometragem inicial aqui:");
+		var kilometragemAtual = prompt("Coloque sua kilometragem atual aqui:");
+		var litrosConsumidos = prompt("Coloque seu consumo de combustível em Litros aqui:");
+		var consumo = calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos);
+
+		mostra("O seu carro anda : " + consumo + " km por cada Litro de combustível colocado!");
     </script>
 </html> 
