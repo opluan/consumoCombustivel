@@ -1,5 +1,9 @@
 <meta charset="UTF-8">
 
+<head>
+	<h1>O que abastecer e qual a economia do meu carro</h1>
+</head>
+
 <html>
     <script>
         function pulaLinha() {
@@ -15,11 +19,19 @@
 		return (kilometragemAtual - kilometragemInicial) / litrosConsumidos;
 	}
 
-		var kilometragemInicial = parseInt(prompt("Coloque sua kilometragem inicial aqui:"));
-		var kilometragemAtual = parseInt(prompt("Coloque sua kilometragem atual aqui:"));
-		var litrosConsumidos = parseInt(prompt("Coloque seu consumo de combustível em Litros aqui:"));
-		var consumo = calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos);
+	var kilometragemInicial = parseInt(prompt("Coloque sua kilometragem inicial aqui:"));
+	var kilometragemAtual = parseInt(prompt("Coloque sua kilometragem atual aqui:"));
+	var litrosConsumidos = parseInt(prompt("Coloque seu consumo de combustível em Litros aqui:"));
+	var consumo = calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos);
+	
+	if (diferenca >= 70) {
+		mostra("Está compensando abastecer GASOLINA!");
+	}
 
-		mostra("O seu carro anda : " + consumo + " km por cada Litro de combustível colocado!");
+	if (diferenca < 70) {
+		mostra("Está compensando abastecer ALCOOL!");
+	}
+
+	mostra("O seu carro anda : " + consumo + " km por cada Litro de combustível colocado!");
     </script>
 </html> 
