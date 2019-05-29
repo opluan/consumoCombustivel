@@ -15,9 +15,9 @@
 		return (kilometragemAtual - kilometragemInicial) / litrosConsumidos;
 	}
 
-		var kilometragemInicial = prompt("Coloque sua kilometragem inicial aqui:");
-		var kilometragemAtual = prompt("Coloque sua kilometragem atual aqui:");
-		var litrosConsumidos = prompt("Coloque seu consumo de combustível em Litros aqui:");
+		var kilometragemInicial = parseInt(prompt("Coloque sua kilometragem inicial aqui:"));
+		var kilometragemAtual = parseInt(prompt("Coloque sua kilometragem atual aqui:"));
+		var litrosConsumidos = parseInt(prompt("Coloque seu consumo de combustível em Litros aqui:"));
 		var consumo = calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos);
 
 		mostra("O seu carro anda : " + consumo + " km por cada Litro de combustível colocado!");
