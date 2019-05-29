@@ -3,16 +3,17 @@
 <html>
     <script>
         function pulaLinha() {
-            document.write("<br>");
+		document.write("<br>");
         }
+	    
         function mostra(textoMostra) {
-            document.write(textoMostra);
-            pulaLinha();
+		document.write(textoMostra);
+		pulaLinha();
         }
+	    
         function calculaCombustivel(kilometragemInicial, kilometragemAtual, litrosConsumidos) {
-			
-			return (kilometragemAtual - kilometragemInicial) / litrosConsumidos;
-			}
+		return (kilometragemAtual - kilometragemInicial) / litrosConsumidos;
+	}
 
 		var kilometragemInicial = prompt("Coloque sua kilometragem inicial aqui:");
 		var kilometragemAtual = prompt("Coloque sua kilometragem atual aqui:");
