@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+
+<html>
+    <script>
+        function pulaLinha() {
+            document.write("<br>");
+        }
+        function mostra(textoMostra) {
+            document.write(textoMostra);
+            pulaLinha();
+        }
+        function calculaCombustivel(distanciaInicial, distanciaFinal, gastoReais) {
+            
+            var consumo = (distanciaFinal - distanciaInicial) / gastoReais;
+            
+            mostra("O gasto de combustível foi de : " + consumo + " km/L");
+        }
+        calculaCombustivel(window.prompt("Coloque sua kilometragem inicial aqui:"), window.prompt("Coloque sua kilometragem atual aqui:"), window.prompt("Coloque aqui quantos litros foram abastecido:"))
+    </script>
+</html> 
